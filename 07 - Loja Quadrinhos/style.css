@@ -34,12 +34,6 @@ body {
 }
 
 /*header*/
-header {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-}
 .navbar{
   background-color: var(--color-950);
 }
@@ -51,9 +45,22 @@ nav ul li {
   background-color: var(--color-950);
 }
 
+
+/*search card*/
+#card_de_busca{
+  position: absolute;
+  top: 56px;
+  border-radius: 0;
+  height: 400px;
+  z-index: 3;
+}
+.card{
+  background-color: var(--color-100);
+}
+
 /*slider*/
 #slider ul li{
-  height: 700px;
+  height: 500px;
 }
 
 
