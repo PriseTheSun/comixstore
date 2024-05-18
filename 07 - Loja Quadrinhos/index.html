@@ -24,6 +24,7 @@
             aria-label="menu"
             aria-expanded="false"
             data-target="navbarBasicExample"
+            onclick="mobileMenuCollapse()"
           >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -40,7 +41,7 @@
 
             <a class="navbar-item"> Fale Conosco</a>
 
-            <div class="navbar-item has-dropdown is-hoverable">
+            <div class="navbar-item has-dropdown" onclick="mostraDrop();">
               <a class="navbar-link"> Nossos Produtos </a>
 
               <div class="navbar-dropdown">
@@ -89,6 +90,7 @@
           consectetur purus sit amet fermentum.
         </div>
       </div>
+      <span class="fecha-busca p-2" onclick="fechaCardDeBusca()" title="Clique Aqui para fechar o campo de busca">Fechar busca</span>
     </div>
 
     <script src="assets/lib/jquery/jquery-3.7.1.min.js"></script>

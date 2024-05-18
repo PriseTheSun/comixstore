@@ -50,12 +50,19 @@ nav ul li {
 #card_de_busca{
   position: absolute;
   top: 56px;
+  width: 100%;
   border-radius: 0;
   height: 400px;
   z-index: 3;
 }
 .card{
   background-color: var(--color-100);
+}
+.fecha-busca{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
 }
 
 /*slider*/
@@ -118,4 +125,17 @@ nav ul li {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-style: normal;
+}
+
+
+@media(max-width: 1023px){
+  #card_de_busca{
+    z-index: 30 !important;
+  }
+  .control input {
+    width: 100%;
+  }
+  #slider ul li{
+    height: 100svh;
+  }
 }

@@ -1,10 +1,3 @@
-$(document).ready(function () {
-  $(".navbar-burger").click(function () {
-    $(".navbar-burger").toggleClass("is-active");
-    $(".navbar-menu").toggleClass("is-active");
-  });
-});
-
 $(document).on("DOMContentLoaded", function () {
   new Splide(".splide", {
     type: "loop",
@@ -24,3 +17,18 @@ $("#busca_quadrinho").on("input", function () {
     $("#card_de_busca").addClass("is-hidden");
   }
 });
+
+function mobileMenuCollapse() {
+  $(".navbar-burger").toggleClass("is-active");
+  $(".navbar-menu").toggleClass("is-active");
+}
+
+function fechaCardDeBusca(){
+  $("#card_de_busca").addClass("is-hidden");
+  $("#busca_quadrinho").val('');
+}
+
+function mostraDrop(){
+  $(".has-dropdown").toggleClass("is-active");
+  
+}
