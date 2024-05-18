@@ -25,10 +25,11 @@ function mobileMenuCollapse() {
 
 function fechaCardDeBusca(){
   $("#card_de_busca").addClass("is-hidden");
+  $(".navbar-burger").toggleClass("is-active");
+  $(".navbar-menu").toggleClass("is-active");
   $("#busca_quadrinho").val('');
 }
 
 function mostraDrop(){
   $(".has-dropdown").toggleClass("is-active");
-  
 }
