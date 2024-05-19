@@ -181,3 +181,23 @@ nav ul li {
     font-size: 1.3rem;
   }
 }
+
+/* cards */
+
+.card-content{
+  display: flex;
+  flex-direction: row;
+  max-height: 200px;
+  height: 100px;
+
+}
+
+#card-title{
+
+  max-width: 100px;
+}
+
+#card-image img{
+  max-height: 180px;
+  height: 150px;
+}
