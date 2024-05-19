@@ -14,9 +14,7 @@
     <header>
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="#">
-            CommicRider BR
-          </a>
+          <a class="navbar-item" href="#"> CommicRider BR </a>
 
           <a
             role="button"
@@ -48,7 +46,7 @@
                 <a class="navbar-item"> Livros </a>
                 <a class="navbar-item is-selected"> Recomendações </a>
                 <a class="navbar-item"> Detonados </a>
-                
+
                 <hr class="navbar-divider" />
                 <a class="navbar-item"> Gratuítos da Semana </a>
               </div>
@@ -59,7 +57,12 @@
             <div class="navbar-item">
               <div class="field has-addons">
                 <p class="control">
-                  <input id="busca_quadrinho" class="input" type="text" placeholder="Encontre seu livro aqui" />
+                  <input
+                    id="busca_quadrinho"
+                    class="input"
+                    type="text"
+                    placeholder="Encontre seu livro aqui"
+                  />
                 </p>
                 <p class="control">
                   <button class="button">Pesquisar</button>
@@ -70,27 +73,117 @@
         </div>
       </nav>
     </header>
-    
+
     <div id="slider" class="splide">
       <div class="splide__track">
         <ul class="splide__list">
-          <li class="splide__slide fundo-slider1"></li>
-          <li class="splide__slide fundo-slider2"></li>
-          <li class="splide__slide fundo-slider3"></li>
+          <li
+            class="splide__slide fundo-slider1 is-flex is-justify-content-center is-align-items-center"
+          >
+            <div
+              class="cor-font-slider has-text-centered is-flex is-flex-direction-column is-align-items-center"
+            >
+              <p class="fundo-tag-p-slider p-2">
+                Todos os livros geek a um clique de você.
+              </p>
+              <h2 class="has-text-weight-medium titulo-slides">
+                Encontre os melhores livros geek em um clique. Mergulhe na
+                cultura pop agora mesmo!
+              </h2>
+              <div class="is-flex is-align-items-center mt-5">
+                <a
+                  class="fundo-actions button has-text-weight-medium p-3 no-border"
+                  href="#"
+                  title="Clique aqui para ver todos os prudutos"
+                  >Ver Produtos</a
+                >
+                <a
+                  class="ml-5 has-text-white has-text-weight-bold"
+                  href="#"
+                  title="Clique aqui e saiba mais"
+                  >Saiba Mais</a
+                >
+              </div>
+            </div>
+          </li>
+
+          <li
+            class="splide__slide fundo-slider2 is-flex is-justify-content-center is-align-items-center"
+          >
+            <div
+              class="cor-font-slider has-text-centered is-flex is-flex-direction-column is-align-items-center"
+            >
+              <p class="fundo-tag-p-slider p-2">
+                Descubra o Universo dos Quadrinhos.
+              </p>
+              <h2 class="has-text-weight-medium titulo-slides">
+                Explore nossa coleção exclusiva de quadrinhos de todos os
+                gêneros e encontre suas histórias favoritas
+              </h2>
+              <div class="is-flex is-align-items-center mt-5">
+                <a
+                  class="fundo-actions button has-text-weight-medium p-3 no-border"
+                  href="#"
+                  title="Clique aqui para ver todos os prudutos"
+                  >Ver Produtos</a
+                >
+                <a
+                  class="ml-5 has-text-white has-text-weight-bold"
+                  href="#"
+                  title="Clique aqui e saiba mais"
+                  >Saiba Mais</a
+                >
+              </div>
+            </div>
+          </li>
+
+          <li
+            class="splide__slide fundo-slider3 is-flex is-justify-content-center is-align-items-center"
+          >
+            <div
+              class="cor-font-slider has-text-centered is-flex is-flex-direction-column is-align-items-center"
+            >
+              <p class="fundo-tag-p-slider p-2">
+                Detonados de Games
+              </p>
+              <h2 class="has-text-weight-medium titulo-slides">
+                Encontre guias completos para dominar seus jogos favoritos
+              </h2>
+              <div class="is-flex is-align-items-center mt-5">
+                <a
+                  class="fundo-actions button has-text-weight-medium p-3 no-border"
+                  href="#"
+                  title="Clique aqui para ver todos os prudutos"
+                  >Ver Produtos</a
+                >
+                <a
+                  class="ml-5 has-text-white has-text-weight-bold"
+                  href="#"
+                  title="Clique aqui e saiba mais"
+                  >Saiba Mais</a
+                >
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
-    
+
     <div id="card_de_busca" class="card is-hidden">
       <div class="card-content">
         <div class="content">
-          Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec
-          id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis
-          consectetur purus sit amet fermentum.
+          Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros.
+          Donec id elit non mi porta gravida at eget metus. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Cras mattis consectetur purus sit amet fermentum.
         </div>
       </div>
-      <span class="fecha-busca p-2" onclick="fechaCardDeBusca()" title="Clique Aqui para fechar o campo de busca">Fechar busca</span>
+      <span
+        class="fecha-busca p-2"
+        onclick="fechaCardDeBusca()"
+        title="Clique Aqui para fechar o campo de busca"
+        >Fechar busca</span
+      >
     </div>
 
     <script src="assets/lib/jquery/jquery-3.7.1.min.js"></script>
