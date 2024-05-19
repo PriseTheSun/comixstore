@@ -10,13 +10,6 @@ $(document).on("DOMContentLoaded", function () {
   }).mount();
 });
 
-$("#busca_quadrinho").on("input", function () {
-  if ($(this).val().length > 0) {
-    $("#card_de_busca").removeClass("is-hidden");
-  } else {
-    $("#card_de_busca").addClass("is-hidden");
-  }
-});
 
 function mobileMenuCollapse() {
   $(".navbar-burger").toggleClass("is-active");
@@ -53,47 +46,29 @@ const livros = [
 
 const gerenciador = new FiltragemLivros(livros);
 
-const searchInput = document.getElementById('busca_quadrinho');
-searchInput.addEventListener('keyup', filtrarLivros);
-
-function filtrarLivros(){
-  const termo = searchInput.value;
+$('#busca_quadrinho').on('keyup', function() {
+  const termo = $(this).val();
   const filtrados = gerenciador.filtrarPorTitulo(termo);
-
   exibeCards(filtrados);
+});
+
+function exibeCards(filtrados) {
+  const $cardContent = $('#card-content');
+  $cardContent.empty();
+
+  if (filtrados.length > 0) {
+    const cardItems = filtrados.map(livro => `
+      <div id="card-item">
+        <div class="card-image"><img src="${livro.imageUrl}" alt="${livro.nome}"></div>
+        <div class="card-title"><a href="${livro.linkUrl}">${livro.nome}</a></div>
+      </div>
+    `);
+    $cardContent.append(cardItems);
+  }
 }
 
-function exibeCards(filtrados){
-  
 
-  const cardContent = document.getElementById('card-content');
 
-  cardContent.innerHTML = '';
-
-    if (filtrados.length > 0) {
-        filtrados.forEach((livro) => {
-
-          const cardDiv = document.createElement('div');
-          cardDiv.id = 'card-item';
-
-          const cardTitle = document.createElement('div');
-          cardTitle.className = 'card-title';
-          cardTitle.innerHTML = `<a href="${livro.linkUrl}">${livro.nome}</a>`;
-
-          const cardImage = document.createElement('div');
-          cardImage.className = 'card-image';
-          cardImage.innerHTML = `<img src="${livro.imageUrl}" alt="${livro.nome}">`;
-
-          // Adiciona o título e a imagem ao card
-          cardDiv.appendChild(cardTitle);
-          cardDiv.appendChild(cardImage);
-
-          // Adiciona o card ao card-content
-          cardContent.appendChild(cardDiv);
-        });
-    }
-  
-}
 
 
 
