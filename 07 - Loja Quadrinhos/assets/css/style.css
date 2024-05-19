@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --color-50: #f8fafc;
+  --color-100: #f1f5f9;
+  --color-200: #e2e8f0;
+  --color-300: #cbd5e1;
+  --color-400: #94a3b8;
+  --color-500: #64748b;
+  --color-600: #475569;
+  --color-700: #334155;
+  --color-800: #1e293b;
+  --color-900: #0f172a;
+  --color-950: #020617;
+
+  --color-v50: #f5f3ff;
+  --color-v100: #ede9fe;
+  --color-v200: #ddd6fe;
+  --color-v300: #c4b5fd;
+  --color-v400: #a78bfa;
+  --color-v500: #8b5cf6;
+  --color-v600: #7c3aed;
+  --color-v700: #6d28d9;
+  --color-v800: #5b21b6;
+  --color-v900: #4c1d95;
+  --color-v950: #2e1065;
+}
+
+body {
+  background-color: var(--color-50);
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  height: 100svh;
+  padding: 0;
+  color: var(--color-950);
+}
+
+/*assets*/
+.no-border {
+  border: none;
+}
+
+/*header*/
+.navbar {
+  background-color: var(--color-950);
+}
+nav ul li {
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+.input {
+  background-color: var(--color-950);
+}
+.navbar-link:not(.is-arrowless):after {
+  border-color: var(--color-100);
+}
+.is-selected {
+  background-color: var(--color-v500) !important;
+}
+
+/*search card*/
+#card_de_busca {
+  position: absolute;
+  top: 56px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 0;
+  height: 400px;
+  z-index: 3;
+}
+.card {
+  background-color: var(--color-100);
+}
+#card-item {
+}
+.card-content {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 50px;
+  overflow-x: scroll;
+}
+
+.card-title a {
+  color: var(--color-v950) !important;
+}
+
+.card-image {
+  width: 150px;
+}
+.card-image img {
+  width: 150px;
+}
+
+.fecha-busca {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  cursor: pointer;
+}
+.fonte-fecha-searchcard {
+  color: var(--color-950);
+}
+.fonte-fecha-searchcard:hover {
+  color: var(--color-v400);
+}
+
+/*slider*/
+#slider ul li {
+  height: 500px;
+}
+#slider h2 {
+  width: 70%;
+}
+
+.fundo-slider1,
+.fundo-slider2,
+.fundo-slider3 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.fundo-slider1 {
+  background-image: url(../img/slider1.avif);
+}
+.fundo-slider2 {
+  background-image: url(../img/slider2.avif);
+}
+.fundo-slider3 {
+  background-image: url(../img/slider3.avif);
+}
+
+.fundo-tag-p-slider {
+  background-color: var(--color-v500) !important;
+  width: fit-content;
+  border-radius: 3px;
+}
+.cor-font-slider {
+  color: var(--color-100);
+}
+.titulo-slides {
+  font-size: 2rem;
+}
+
+.fundo-actions {
+  background-color: var(--color-v500) !important;
+}
+
+/*fonts*/
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/*recomendações*/
+#veja_recomendacao h3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-950);
+}
+#veja_recomendacao h3::before {
+  content: "";
+  background-color: var(--color-v500);
+  height: 2px;
+  width: 50px;
+  position: absolute;
+  bottom: 20px;
+}
+/*scrollbar*/
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-950);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-400);
+  cursor: grab;
+}
+
+@media (max-width: 1023px) {
+  body{
+    height: auto;
+  }
+  #card_de_busca {
+    z-index: 30 !important;
+    top: -10px;
+  }
+  .control input {
+    width: 100%;
+  }
+  #slider ul li {
+    height: 100svh;
+  }
+}
+
+@media (max-width: 576px) {
+  .titulo-slides {
+    font-size: 1.8rem;
+  }
+  .fundo-actions {
+    width: 110px;
+    padding: 8px !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .titulo-slides {
+    font-size: 1.3rem;
+  }
+}
