@@ -73,8 +73,6 @@ nav ul li {
 .card {
   background-color: var(--color-100);
 }
-#card-item {
-}
 .card-content {
   position: relative;
   display: flex;
@@ -184,6 +182,29 @@ nav ul li {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-style: normal;
+}
+
+
+/*tab*/
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.font-tab{
+  color: var(--color-v700);
+  cursor: pointer;
+  width: 130px;
+  text-align: center;
+  transition: 0.50s;
+}
+.active{
+  background-color: var(--color-v200);
+  border-radius: 10px;
+  font-weight: 500;
 }
 
 /*recomendações*/

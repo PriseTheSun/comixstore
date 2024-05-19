@@ -32,8 +32,22 @@ function mostraDrop(){
   $(".has-dropdown").toggleClass("is-active");
 }
 
+
+function mudaTab(index) {
+  $('.font-tab').removeClass('active');
+  $('.tab-content').hide();
+  $('.font-tab[data-index="' + index + '"]').addClass('active');
+  $('.tab-content[data-index="' + index + '"]').fadeIn();
+}
+
+$('#tabs_controlers .font-tab').on('click', function() {
+  const index = $(this).data('index');
+  mudaTab(index);
+});
+
+mudaTab(0);
+
 const livros = [
-  
   new LivroTemplate("O diário de Anne Frank em quadrinho", "Ari Folman", "Record", "https://m.media-amazon.com/images/I/51oynX0zWPL._SY445_SX342_.jpg", "https://amzn.to/3WHBl7r"),
   new LivroTemplate("Avatar: A lenda de Aang: Uma história em quadrinhos", "Nickelodeon", "Planeta", "https://m.media-amazon.com/images/I/81RIyIUJIKL._SY342_.jpg", "https://amzn.to/3Ke4cIR"),
   new LivroTemplate("1984 (Edição em quadrinhos)", "George Orwell", "Quadrinhos na Cia", "https://m.media-amazon.com/images/I/41nZx9bO1UL._SY445_SX342_.jpg","https://amzn.to/4bDFk9T"),
