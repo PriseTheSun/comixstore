@@ -52,6 +52,15 @@ $('#busca_quadrinho').on('keyup', function() {
   exibeCards(filtrados);
 });
 
+$("#busca_quadrinho").on("input", function () {
+  const $cardDeBusca = $("#card_de_busca");
+  if (this.value.length > 0) {
+    $cardDeBusca.removeClass("is-hidden");
+  } else {
+    $cardDeBusca.addClass("is-hidden");
+  }
+});
+
 function exibeCards(filtrados) {
   const $cardContent = $('#card-content');
   $cardContent.empty();
