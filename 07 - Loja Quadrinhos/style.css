@@ -38,6 +38,7 @@ body {
   border: none;
 }
 
+
 /*header*/
 .navbar {
   background-color: var(--color-950);
@@ -68,11 +69,39 @@ nav ul li {
 .card {
   background-color: var(--color-100);
 }
+#card-item {
+}
+.card-content {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 50px;
+  overflow-x: scroll;
+}
+
+.card-title a{
+  color: var(--color-v950) !important;
+}
+
+.card-image{
+  width: 150px;
+
+}
+.card-image img{
+  width: 150px;
+}
+
 .fecha-busca {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   right: 0;
   cursor: pointer;
+}
+.fonte-fecha-searchcard{
+  color: var(--color-950);
+}
+.fonte-fecha-searchcard:hover{
+  color: var(--color-v400);
 }
 
 /*slider*/
@@ -154,9 +183,28 @@ nav ul li {
   font-style: normal;
 }
 
+
+/*scrollbar*/
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-950);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-400);
+}
+
 @media (max-width: 1023px) {
   #card_de_busca {
     z-index: 30 !important;
+    top: -10px;
   }
   .control input {
     width: 100%;
@@ -180,24 +228,4 @@ nav ul li {
   .titulo-slides {
     font-size: 1.3rem;
   }
-}
-
-/* cards */
-
-.card-content{
-  display: flex;
-  flex-direction: row;
-  max-height: 200px;
-  height: 100px;
-
-}
-
-#card-title{
-
-  max-width: 100px;
-}
-
-#card-image img{
-  max-height: 180px;
-  height: 150px;
 }

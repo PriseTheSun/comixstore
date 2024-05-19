@@ -10,13 +10,6 @@ $(document).on("DOMContentLoaded", function () {
   }).mount();
 });
 
-$("#busca_quadrinho").on("input", function () {
-  if ($(this).val().length > 0) {
-    $("#card_de_busca").removeClass("is-hidden");
-  } else {
-    $("#card_de_busca").addClass("is-hidden");
-  }
-});
 
 function mobileMenuCollapse() {
   $(".navbar-burger").toggleClass("is-active");
@@ -49,6 +42,14 @@ const livros = [
 ];
 
 const gerenciador = new GerenciadorLivros(livros);
+$("#busca_quadrinho").on("input", function () {
+  const $cardDeBusca = $("#card_de_busca");
+  if (this.value.length > 0) {
+    $cardDeBusca.removeClass("is-hidden");
+  } else {
+    $cardDeBusca.addClass("is-hidden");
+  }
+});
 
 $('#busca_quadrinho').on('keyup', function() {
   const termo = $(this).val();
@@ -61,17 +62,18 @@ function exibeCards(filtrados) {
   $cardContent.empty();
 
   if (filtrados.length > 0) {
-    filtrados.forEach((livro) => {
-      const $cardDiv = $('<div>', { id: 'card-item' });
-
-      const $cardTitle = $('<div>', { class: 'card-title' }).html(`<a href="${livro.linkUrl}">${livro.nome}</a>`);
-      const $cardImage = $('<div>', { class: 'card-image' }).html(`<img src="${livro.imageUrl}" alt="${livro.nome}">`);
-
-      $cardDiv.append($cardTitle, $cardImage);
-      $cardContent.append($cardDiv);
-    });
+    const cardItems = filtrados.map(livro => `
+      <div id="card-item">
+        <div class="card-image"><img src="${livro.imageUrl}" alt="${livro.nome}"></div>
+        <div class="card-title"><a href="${livro.linkUrl}">${livro.nome}</a></div>
+      </div>
+    `);
+    $cardContent.append(cardItems);
   }
 }
+
+
+
 
 
 

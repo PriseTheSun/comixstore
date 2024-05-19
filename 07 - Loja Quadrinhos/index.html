@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="assets/lib/font-awesome/all.min.css" />
     <link rel="stylesheet" href="assets/lib/splidejs/splide.min.css" />
     <link rel="stylesheet" href="assets/lib/bulma/bulma.min.css" />
+    <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="style.css" />
 
     <title>CommicRider BR</title>
@@ -74,7 +75,7 @@
       </nav>
     </header>
 
-    <div id="slider" class="splide">
+    <section id="slider" class="splide">
       <div class="splide__track">
         <ul class="splide__list">
           <li
@@ -167,17 +168,24 @@
           </li>
         </ul>
       </div>
-    </div>
+    </section>
+
+    <section class="container">
+      <span class="ad"></span>
+    </section>
+    
+
+
 
     <div id="card_de_busca" class="card is-hidden">
-      <div class="card-content" id="card-content">
+      <div id="card-content" class="card-content" >
         
       </div>
       <span
-        class="fecha-busca p-2"
+        class="fecha-busca fonte-fecha-searchcard fadeInUp p-2"
         onclick="fechaCardDeBusca()"
         title="Clique Aqui para fechar o campo de busca"
-        >Fechar busca</span
+        >Fechar busca<i class="fa-regular fa-circle-xmark ml-2"></i></span
       >
     </div>
 
