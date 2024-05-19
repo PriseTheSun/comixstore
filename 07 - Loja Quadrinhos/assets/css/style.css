@@ -31,7 +31,6 @@ body {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   margin: 0;
-  height: 100svh;
   padding: 0;
   color: var(--color-950);
 }
@@ -73,7 +72,7 @@ nav ul li {
 .card {
   background-color: var(--color-100);
 }
-.card-content {
+#card_de_busca .card-content {
   position: relative;
   display: flex;
   align-items: baseline;
@@ -81,14 +80,14 @@ nav ul li {
   overflow-x: scroll;
 }
 
-.card-title a {
+#card_de_busca .card-title a {
   color: var(--color-v950) !important;
 }
 
-.card-image {
+#card_de_busca .card-image {
   width: 150px;
 }
-.card-image img {
+#card_de_busca .card-image img {
   width: 150px;
 }
 
