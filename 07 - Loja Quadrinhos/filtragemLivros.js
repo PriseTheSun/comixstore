@@ -1,4 +1,4 @@
-class GerenciadorLivros {
+class FiltragemLivros {
     constructor(livros) {
         this.livros = livros;
     }

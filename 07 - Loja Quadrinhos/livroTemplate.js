@@ -1,4 +1,4 @@
-class Livro{
+class LivroTemplate{
 
     constructor(nome, autor, editora, imageUrl, linkUrl){
 
