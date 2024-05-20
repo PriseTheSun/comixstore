@@ -70,21 +70,25 @@ const livros = [
     "STUART MOORE",
     " Novo Século",
     "https://m.media-amazon.com/images/I/71FTAkJQLrL._SY342_.jpg",
-    "https://amzn.to/3QT9JZb"
+    "https://amzn.to/3QT9JZb",
+    "Marvel"
+
   ),
   new LivroTemplate(
     "A Morte do Capitão América",
     "Larry Hama",
     "Novo Século",
     "https://m.media-amazon.com/images/I/910ux6HEIDL._SY342_.jpg",
-    "https://amzn.to/4c1ybQv"
+    "https://amzn.to/4c1ybQv",
+    "DC"
   ),
   new LivroTemplate(
     "Homem De Ferro - Vírus",
     "Alex Irvine",
     "Novo Século",
     "https://m.media-amazon.com/images/I/61YtqjNkmoL._SY342_.jpg",
-    "https://amzn.to/4bo9fTg"
+    "https://amzn.to/4bo9fTg",
+    "DC"
   ),
 
   new LivroTemplate(
@@ -113,22 +117,34 @@ const livros = [
     "Joshua Williamson",
     "Panini",
     "https://m.media-amazon.com/images/I/91oPtJzydaL._SY342_.jpg",
-    "https://amzn.to/4arhWKY"
+    "https://amzn.to/4arhWKY",
+    "DC"
   ),
   new LivroTemplate(
     "Venom/Homem-Aranha: Corporação Venom",
     "Slott Dan",
     "Panini",
     "https://m.media-amazon.com/images/I/814JTClfuoL._SY342_.jpg",
-    "https://amzn.to/3UPtHoQ"
+    "https://amzn.to/3UPtHoQ",
+    "Marvel"
+  ),
+  new LivroTemplate(
+    "Superman: Brainiac: DC Deluxe",
+    "Geoff Johns",
+    "Panini",
+    "https://m.media-amazon.com/images/I/71o2vLwzlqL._SY342_.jpg",
+    "https://amzn.to/4bmbqXp",
+    "DC"
   ),
 ];
 
-const gerenciador = new FiltragemLivros(livros);
+//livros.forEach((livro, index) => {console.log(`${index} - ${livro.franquia}`);})
+
+const filtroLivros = new FiltragemLivros(livros);
 
 $("#busca_quadrinho").on("keyup", function () {
   const termo = $(this).val();
-  const filtrados = gerenciador.filtrarPorTitulo(termo);
+  const filtrados = filtroLivros.filtrarPorTitulo(termo);
   exibeCards(filtrados);
 });
 
@@ -198,49 +214,17 @@ function montaUmTemplateDeCard(
   `;
 }
 
+const cardSessaoTab1 = {
+  imagemLink: "https://bulma.io/assets/images/placeholders/1280x960.png",
+  usuarioAvatar: "https://bulma.io/assets/images/placeholders/96x96.png",
+  title: "Jane Doe",
+  subtitle: "@ComicRider1",
+  content:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>',
+  datetime: "2016-1-2T23:09:00",
+};
 
-const montaSessaoTab1 = [
-  {
-    imagemLink: "https://bulma.io/assets/images/placeholders/1280x960.png",
-    usuarioAvatar: "https://bulma.io/assets/images/placeholders/96x96.png",
-    title: "Jane Doe",
-    subtitle: "@ComicRider1",
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>',
-    datetime: "2016-1-2T23:09:00",
-  },
-  {
-    imagemLink: "https://bulma.io/assets/images/placeholders/1280x960.png",
-    usuarioAvatar: "https://bulma.io/assets/images/placeholders/96x96.png",
-    title: "Jane Doe",
-    subtitle: "@ComicRider2",
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>',
-    datetime: "2016-1-2T23:09:00",
-  },
-  {
-    imagemLink: "https://bulma.io/assets/images/placeholders/1280x960.png",
-    usuarioAvatar: "https://bulma.io/assets/images/placeholders/96x96.png",
-    title: "Jane Doe",
-    subtitle: "@ComicRider3",
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>',
-    datetime: "2016-1-2T23:09:00",
-  },
-  {
-    imagemLink: "https://bulma.io/assets/images/placeholders/1280x960.png",
-    usuarioAvatar: "https://bulma.io/assets/images/placeholders/96x96.png",
-    title: "Jane Doe",
-    subtitle: "@ComicRider4",
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>',
-    datetime: "2016-1-2T23:09:00",
-  },
-
-];
-
-const montaSessaoTab2 = [
-  {
+const cardSessaoTab2 = {
     imagemLink: "https://bulma.io/assets/images/placeholders/1280x960.png",
     usuarioAvatar: "https://bulma.io/assets/images/placeholders/96x96.png",
     title: "Alex Johnson",
@@ -248,12 +232,9 @@ const montaSessaoTab2 = [
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>',
     datetime: "2016-1-3T23:09:00",
-  },
- 
-];
+  };
 
-const montaSessaoTab3 = [
-  {
+const cardSessaoTab3 = {
     imagemLink: "https://bulma.io/assets/images/placeholders/1280x960.png",
     usuarioAvatar: "https://bulma.io/assets/images/placeholders/96x96.png",
     title: "Emily Clark",
@@ -261,11 +242,55 @@ const montaSessaoTab3 = [
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>',
     datetime: "2016-1-4T23:09:00",
-  },
- 
-];
+  };
 
-const tabData = [montaSessaoTab1, montaSessaoTab2, montaSessaoTab3];
+
+
+const sessaoTab1 = []; 
+const sessaoTab2 = []; 
+const sessaoTab3 = [];
+
+const quantidadeCardsTab1 = 4;
+const quantidadeCardsTab2 = 1;
+const quantidadeCardsTab3 = 1;
+
+function cloneObject(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
+function montaSessaoTab(tab, cardSessao, quantidadeCards){
+  for(let card = 0; card < quantidadeCards; card++){
+
+    tab.push(cloneObject(cardSessao));
+  }
+}
+
+montaSessaoTab(sessaoTab1, cardSessaoTab1, 4);
+montaSessaoTab(sessaoTab2, cardSessaoTab1, 1);
+montaSessaoTab(sessaoTab3, cardSessaoTab1, 1);
+
+function atualizaDadosCards(tabASerAtualizada, temaDaTab){
+
+  const quantasFotosNaTab = tabASerAtualizada.length;
+  const livrosFiltrados = filtroLivros.obterLivrosPorFranquia(temaDaTab, quantasFotosNaTab);
+  
+  
+  console.log("tema", temaDaTab, " - filtrado: ", livrosFiltrados);
+  tabASerAtualizada.forEach((card, index) => {
+    
+
+    if (index < livrosFiltrados.length) {
+      card.imagemLink = livrosFiltrados[index].imageUrl;
+    }
+  });
+}
+
+atualizaDadosCards(sessaoTab1, 'DC');
+atualizaDadosCards(sessaoTab2, 'Marvel');
+atualizaDadosCards(sessaoTab3, 'Null');
+
+const tabData = [sessaoTab1, sessaoTab2, sessaoTab3];
+
 
 $(document).ready(function () {
   $(".tab-content").each(function (index) {

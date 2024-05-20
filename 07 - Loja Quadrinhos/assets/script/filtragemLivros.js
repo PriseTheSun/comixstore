@@ -15,4 +15,14 @@ class FiltragemLivros {
         return this.livros.filter(livro => livro.editora === editora);
     }
 
+    filtrarPorFranquia(franquia) {
+        
+        return this.livros.filter(livro => livro.franquia && livro.franquia.toLowerCase() === franquia.toLowerCase());
+      }
+    
+    obterLivrosPorFranquia(franquia, quantidade) {
+        const livrosFiltrados = this.filtrarPorFranquia(franquia);
+        return livrosFiltrados.slice(0, quantidade);
+    }
+
 }
